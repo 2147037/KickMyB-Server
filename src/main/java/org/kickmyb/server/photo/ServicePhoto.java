@@ -39,6 +39,8 @@ public class ServicePhoto {
         return photo;
     }
 
+
+
     @Transactional
     public MPhoto storeSingle(MultipartFile file) throws IOException {
 

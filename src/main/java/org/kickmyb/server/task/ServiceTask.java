@@ -16,6 +16,7 @@ public interface ServiceTask {
     TaskDetailResponse detail(Long id, MUser user);
     void addOne(AddTaskRequest req, MUser user) throws Existing, Empty, TooShort;
     void updateProgress(long taskID, int value);
+    void hardDeleteTask(long taskID, MUser muser);
     List<HomeItemResponse> home(Long userID);
     TaskDetailPhotoResponse detailPhoto(Long id, MUser user);
     List<HomeItemPhotoResponse> homePhoto(Long userID);

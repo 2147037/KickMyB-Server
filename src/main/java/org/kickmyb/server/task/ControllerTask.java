@@ -57,6 +57,15 @@ public class ControllerTask {
         return serviceTask.detail(id, user);
     }
 
+    @GetMapping(value = "/api/delete/{taskID}", produces = "text/plain")
+    public @ResponseBody String hardDelete(@PathVariable long taskID) {
+        System.out.println("KICKB SERVER : Task deleted : " + taskID );
+        ConfigHTTP.attenteArticifielle();
+        MUser user = currentUser();
+        serviceTask.hardDeleteTask(taskID, user);
+        return "Good";
+    }
+
     /**
      * Créer une page qui affiche tous les utilisateurs et les titres des tâches.
      */
